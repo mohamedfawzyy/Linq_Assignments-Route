@@ -12,3 +12,4 @@ D:\engineering terms\front-end-engineer\Route\C41 RouteBackend\06 LINQ\Assignmen
 D:\engineering terms\front-end-engineer\Route\C41 RouteBackend\06 LINQ\Assignment\LinqAssignments\LinqAssignments\obj\Debug\net6.0\LinqAssignments.pdb
 D:\engineering terms\front-end-engineer\Route\C41 RouteBackend\06 LINQ\Assignment\LinqAssignments\LinqAssignments\obj\Debug\net6.0\LinqAssignments.genruntimeconfig.cache
 D:\engineering terms\front-end-engineer\Route\C41 RouteBackend\06 LINQ\Assignment\LinqAssignments\LinqAssignments\obj\Debug\net6.0\ref\LinqAssignments.dll
+D:\engineering terms\front-end-engineer\Route\C41 RouteBackend\06 LINQ\Assignment\LinqAssignments\LinqAssignments\obj\Debug\net6.0\LinqAssignments.sourcelink.json

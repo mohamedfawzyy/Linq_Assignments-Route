@@ -1,7 +1,11 @@
-﻿using System.Net.Http.Headers;
+﻿using Microsoft.VisualBasic;
+using System.ComponentModel.DataAnnotations;
+using System.Net.Http.Headers;
 using System.Reflection.Metadata;
-
+using System.Runtime.Intrinsics.X86;
+using System.Security.Cryptography.X509Certificates;
 using static Day_01_G01.ListGenerator;
+using static System.Net.Mime.MediaTypeNames;
 namespace LinqAssignments
 {
     class CustomComperar : IComparer<string>
@@ -179,6 +183,299 @@ namespace LinqAssignments
             //{
             //    Console.WriteLine(O);
             //}
+            #endregion
+            #endregion
+
+            #region Element Operators
+            #region Get first Product out of Stock 
+            //var Result = ProductList.FirstOrDefault(p => p.UnitsInStock == 0);
+            //Console.WriteLine(Result);
+            #endregion
+
+            #region  first product whose Price > 1000, unless there is no match, in which case null is returned 
+            //var Result = ProductList.FirstOrDefault(p => p.UnitPrice > 1000);
+            //Console.WriteLine(Result);
+            #endregion
+
+            #region Retrieve the second number greater than 5 
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var NumbersGreaterthan5=Arr.Where(num=>num > 5).OrderBy(num=>num);
+            //var Result=NumbersGreaterthan5.ElementAt(1);
+            //Console.WriteLine(Result);
+            #endregion
+
+
+            #endregion
+
+            #region Aggregate Operators
+
+            #region  Count to get the number of odd numbers in the array
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var Result = Arr.Count(num => num % 2 != 0);
+            //Console.WriteLine(Result);
+            #endregion
+
+            #region list of customers and how many orders each has.
+            //var Result = CustomerList.Select(c => new { cutomre=c, totalOreders=c.Orders.Count() });
+            //foreach (var item in Result) {
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region Return a list of categories and how many products each has
+            //    var Result=ProductList.GroupBy(p=>p.Category).Select(c=>new {category = c.Key ,countProducts= c.Count() });
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region Get the total of the numbers in an array.
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var Result=Arr.Sum();
+            //Console.WriteLine(Result);
+            #endregion
+
+            #region Get the total number of characters of all words in dictionary_english.txt 
+            //var Result = EnglishDictionary.Sum(w => w.Length);
+            //Console.WriteLine(Result);
+            #endregion
+
+            #region  Get the length of the shortest word in dictionary_english.txt
+            //var Result = EnglishDictionary.MinBy(w => w.Length);
+            //Console.WriteLine(Result.length);
+            #endregion
+
+            #region Get the length of the longest word in dictionary_english.txt
+            //var Result = EnglishDictionary.MaxBy(w => w.Length);
+            //Console.WriteLine(Result.Length);
+            #endregion
+
+            #region Get the average length of the words in dictionary_english.txt
+            //var Result = EnglishDictionary.Average(w => w.Length);
+            //Console.WriteLine(Result);
+            #endregion
+
+            #region Get the total units in stock for each product category.
+            //var Resulr = ProductList.GroupBy(p => p.Category)
+            //                       .Select(c => new { category=c.Key , totalUnites = c.Sum(c=>c.UnitsInStock)});
+            //foreach (var item in Resulr)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region Get the cheapest price among each category's products
+            //var Result = ProductList.GroupBy(p => p.Category)
+            //                       .Select(c => new { Category = c.Key, cheapestPrice = c.MinBy(p => p.UnitPrice).UnitPrice });
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region  Get the products with the cheapest price in each category
+            //var Result = from p in ProductList
+            //             group p by p.Category
+            //             into category
+            //             select new
+            //             {
+            //                 category = category.Key,
+            //                 cheapestPrice = category.MinBy(p => p.UnitPrice).UnitPrice
+            //             };
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region Get the most expensive price among each category's products.
+            //var Result = ProductList.GroupBy(p => p.Category)
+            //                    .Select(c => new { Category = c.Key, expensivePrice = c.MaxBy(p => p.UnitPrice).UnitPrice });
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region Get the products with the most expensive price in each category.
+            //var Result = ProductList.GroupBy(p => p.Category)
+            //                       .Select(C => new { Category = C.Key, MaxPriceProduct = C.MaxBy(p => p.UnitPrice) });
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region Get the average price of each category's products.
+            //var Result = ProductList.GroupBy(p => p.Category)
+            //                      .Select(c => new { Category = c.Key, AvgPrice = c.Average(p => p.UnitPrice) });
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #endregion
+
+            #region Set Operators
+            #region  Find the unique Category names from Product List
+            //var Result = ProductList.Select(p => p.Category).Distinct();
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region Produce a Sequence containing the unique first letter from both product and customer names
+            //var Result = ProductList.Select(p => p.ProductName[0]).Union(CustomerList.Select(c => c.CustomerName[0]));
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region Create one sequence that contains the common first letter from both product and customer names.
+            //var Result = ProductList.Select(p => p.ProductName[0]).Intersect(CustomerList.Select(c => c.CustomerName[0]));
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region Create one sequence that contains the first letters of product names that are not also first letters of customer names.
+            //var Result = ProductList.Select(p => p.ProductName[0]).Intersect(CustomerList.Select(c => c.CustomerName[0]));
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region Create one sequence that contains the last Three Characters in each name of all customers and products, including any duplicates
+            //var Result = ProductList.Select(p => p.ProductName.Substring(p.ProductName.Length-3, 3)).Concat(CustomerList.Select(c => c.CustomerName.Substring(c.CustomerName.Length-3, 3)));
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+            #endregion
+
+            #region Partitioning Operators
+            #region Get the first 3 orders from customers in Washington
+            //var Result = CustomerList.Where(c => c.Region == "WA").SelectMany(c=>c.Orders).Take(3);
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region  Get all but the first 2 orders from customers in Washington.
+            //    var Result=CustomerList.Where(c=>c.Region == "WA").SelectMany(c=>c.Orders).Skip(2);
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region  Return elements starting from the beginning of the array until a number is hit that is less than its position in the array.
+            //int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var Result = numbers.TakeWhile((num, index) => num > index);
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region Get the elements of the array starting from the first element divisible by 3.
+            //int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var Result = numbers.SkipWhile(num => num % 3 != 0);
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region Get the elements of the array starting from the first element less than its position.
+            //int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var Result=numbers.SkipWhile((num,index) => num > index);
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #endregion
+
+            #region Quantifiers
+            #region Determine if any of the words in dictionary_english.txt (Read dictionary_english.txt into Array of String First) contain the substring 'ei'.
+            //var Result = EnglishDictionary.Any(w => w.Contains("ei"));
+            //Console.WriteLine(Result);
+            #endregion
+
+            #region Return a grouped a list of products only for categories that have at least one product that is out of stock.
+
+            #endregion
+
+            #region  Return a grouped a list of products only for categories that have all of their products in stock
+            //var Result = ProductList.GroupBy(p => p.Category)
+            //             .Where(c => c.All(p => p.UnitsInStock > 0))
+            //             .Select(c=>c);
+
+
+            //foreach (var category in Result)
+            //{
+            //    foreach (var item in category)
+            //    {
+            //        Console.WriteLine(item);
+            //    }
+            //}
+            #endregion
+
+            #endregion
+
+            #region  Grouping Operators
+
+            #region Use group by to partition a list of numbers by their remainder when divided by 5
+            //List<int> numbers = new List<int> {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
+            //var Result = numbers.GroupBy(num => num % 5)
+            //                    .Select(remainder => remainder);
+            //foreach (var remainder in Result)
+            //{
+            //    Console.WriteLine($"Numbers with a remainder of {remainder} when divided by 5 ");
+            //    foreach (var number in remainder)
+            //    {
+            //        Console.WriteLine(number);
+            //    }
+            //}
+
+            #endregion
+
+            #region Uses group by to partition a list of words by their first letter.
+            //var Result = EnglishDictionary.GroupBy(w => w[0])
+            //               .Select(l=>l);
+            //foreach (var letter in Result)
+            //{
+            //    Console.WriteLine(letter);
+            //    foreach (var word in letter)
+            //    {
+            //        Console.WriteLine(word);
+            //    }
+            //}
+
+            #endregion
+
+            #region Use Group By with a custom comparer that matches words that are consists of the same Characters Together
+            String[] Arr = { "from", "salt", "earn", " last", "near", "form" };
+            var Result = Arr.GroupBy(w => w.Trim(), new CustomeWordCompaere());
+            foreach (var item in Result)
+            {
+               
+                foreach (var item1 in item)
+                {
+                    Console.WriteLine(item1);
+                }
+                Console.WriteLine("-------");
+            }
             #endregion
             #endregion
 

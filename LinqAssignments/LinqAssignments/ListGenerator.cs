@@ -72,7 +72,9 @@ namespace Day_01_G01
 		public static List<Product> ProductList { get; set; }
 		public static List<Customer> CustomerList { get; set; }
 
-		static ListGenerator()
+		public static string[] EnglishDictionary { get; set; } = File.ReadAllLines("dictionary_english.txt");
+
+        static ListGenerator()
 		{
 			ProductList = new List<Product>()
 			{
